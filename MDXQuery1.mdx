@@ -1,0 +1,20 @@
+SELECT [Measures].[Qty] on columns
+from [Cube 2]
+
+SELECT [Measures].[Qty] on columns,
+[Product Dim 1].[Product Name].allmembers on rows
+from [Cube 2]
+
+SELECT [Measures].[Qty] on columns,
+[Product Dim 1].[Product Name].allmembers on rows
+from [Cube 2]
+where [Time Dim 1].[Calendar Year].[2007]
+
+SELECT [Product Dim 1].[Product Name].allmembers on columns,
+[Time Dim 1].[Calendar Year].allmembers on rows
+from [cube 2]
+
+SELECT [Product Dim 1].[Product Name].allmembers on columns,
+([Time Dim 1].[Calendar Year].allmembers) * ([Channel Dim].[Country].allmembers) on rows
+from [cube 2] 
+
